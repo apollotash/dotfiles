@@ -46,8 +46,8 @@ browser = xdg-open
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-foreground = #00B700
-foreground_bold = #00B700
+foreground = #11aaaa
+foreground_bold = #11aaaa
 background = #0d865d
 
 #80% background transparency (requires a compositor)
