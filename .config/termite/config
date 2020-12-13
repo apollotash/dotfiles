@@ -48,10 +48,10 @@ browser = xdg-open
 
 foreground = #11aaaa
 foreground_bold = #11aaaa
-background = #0d865d
+background = #3F3F3F
 
 #80% background transparency (requires a compositor)
-background = rgba(63, 63, 63, 0.92)
+background = rgba(63, 63, 63, 0.94)
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f

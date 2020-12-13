@@ -1,0 +1,4 @@
+setxkbmap tr &
+nitrogen --restore &
+picom -f &
+numlockx on
