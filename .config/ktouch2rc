@@ -1,0 +1,7 @@
+[Session]
+LastUsedProfileId=1
+
+[Training]
+RequiredAccuracy=97.00000000000006
+RequiredStrokesPerMinute=200
+ShowStatistics=false

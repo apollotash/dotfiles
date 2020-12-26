@@ -16,21 +16,21 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
-
+import Graphics.X11.ExtraTypes.XF86
 
 ------------------------------------------------------------------------
 -- Terminal
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal = "termite"
+myTerminal = "alacritty"
 
 
 ------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["one","two","three","four","five"] ++ map show [6..9]
+myWorkspaces = ["\61728","\62056","\57351","\62930","\61729","6","7","8","9"]
  
 
 ------------------------------------------------------------------------
@@ -48,18 +48,18 @@ myWorkspaces = ["one","two","three","four","five"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ resource =? "desktop_window"  --> doIgnore
-    , className =? "Galculator"     --> doFloat
-    , className =? "Steam"          --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource =? "gpicview"        --> doFloat
-    , className =? "MPlayer"        --> doFloat
-    , className   =? "Download"     --> doFloat
-    , className =? "Progress"       --> doFloat
-    , className =? "steam"          --> doFullFloat -- bigpicture-mode
-    , title=? "Steam_Login"        --> doFloat
-    , className =? "Steam"          --> doShift "three"
-    , title =? "Steam_Login"        --> doShift "three"
+    [ resource =? "desktop_window"     --> doIgnore
+    , className =? "Galculator"        --> doFloat
+    , className =? "Opera"             --> doShift "\62056"
+    , className =? "Gimp"              --> doFloat
+    , resource =? "gpicview"           --> doFloat
+    , className =? "MPlayer"           --> doFloat
+    , className   =? "Download"        --> doFloat
+    , className =? "Progress"          --> doFloat
+    , className =? "steam"             --> doFullFloat -- bigpicture-mode
+    , title=? "Alac "                  --> doShift "6"
+    , className =? "Alacritty"         --> doShift "\61728"
+    , title =? "Steam_Login"           --> doShift "three"
 --    , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
     , isFullscreen                  --> doFullFloat ]
 
@@ -84,21 +84,19 @@ defaultLayouts = avoidStruts (
 ------------------------------------------------------------------------
 -- Colors and borders
 --
-myNormalBorderColor = "#002b36"
-myFocusedBorderColor = "#657b83"
+myNormalBorderColor = "#3F3F3F"
+myFocusedBorderColor = "#11aaaa"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
-tabConfig = defaultTheme {
-    activeBorderColor = "#7C7C7C",
-    activeTextColor = "#CEFFAC",
-    activeColor = "#000000",
-    inactiveBorderColor = "#7C7C7C",
-    inactiveTextColor = "#EEEEEE",
-    inactiveColor = "#000000"
-}
+--tabConfig = defaultTheme {
+  --  activeBorderColor = "#7C7C7C",
+    --activeTextColor = "#CEFFAC",
+    --activeColor = "#000000",
+    --inactiveBorderColor = "#7C7C7C",
+    --inactiveTextColor = "#EEEEEE",
+    --inactiveColor = "#000000"
+--}
 
--- Color of current window title in xmobar.
-xmobarTitleColor = "green"
 
 -- Color of current workspace in xmobar.
 xmobarCurrentWorkspaceColor = "#CEFFAC"
@@ -132,17 +130,20 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "rofi -show run")
 
   -- Mute volume.
-  , ((modMask .|. controlMask, xK_m),
-     spawn "amixer -q set Master toggle")
-
+  , ((0,           xF86XK_AudioMute), 
+  spawn "pactl set-sink-mute @DEFAULT_SINK@ 1")
+  -- Unmute volume. 
+   , ((0 .|. shiftMask, xF86XK_AudioMute), 
+  spawn "pactl set-sink-mute @DEFAULT_SINK@ 0")
   -- Decrease volume.
-  , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -q set Master 5%-")
-
+  , ((0,    xF86XK_AudioLowerVolume), 
+  spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
   -- Increase volume.
-  , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -q set Master 5%+")
+  , ((0,    xF86XK_AudioRaiseVolume), 
+  spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
 
+  ,((0, xF86XK_MonBrightnessUp), spawn "xbacklight +5")
+  ,((0, xF86XK_MonBrightnessDown), spawn "xbacklight -5")
   -- Audio previous.
   , ((0, 0x1008FF16),
      spawn "")
@@ -291,7 +292,7 @@ myStartupHook = return ()
 ------------------------------------------------------------------------
 -- Floats all windows in a certain workspace. 
 -- myLayouts
-myLayouts = onWorkspace "three" simplestFloat $ defaultLayouts
+myLayouts = onWorkspace "6" simplestFloat $ defaultLayouts
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
@@ -299,18 +300,18 @@ myLayouts = onWorkspace "three" simplestFloat $ defaultLayouts
 --main = xmonad =<< xmobar defaultConfig { terminal = "urxvt" }
 
 main = do  
- xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
+ xmproc <- spawnPipe "xmobar ~/.xmobarrc"
  xmonad $ docks $ewmh defaults 
-      { manageHook = manageDocks <+> manageHook defaultConfig  
+      { manageHook = manageDocks <+> myManageHook   
       , layoutHook = avoidStruts $ myLayouts
       , logHook = dynamicLogWithPP xmobarPP  
            { ppOutput = hPutStrLn xmproc  
-           , ppTitle = xmobarColor "#657b83" "" . shorten 100   
+           , ppTitle = xmobarColor "#11aaaa" "" . shorten 100   
            , ppCurrent = xmobarColor "#c0c0c0" "" . wrap "" ""
            , ppSep     = xmobarColor "#c0c0c0" "" " | "
            , ppUrgent  = xmobarColor "#ff69b4" ""
            , ppLayout = const "" -- to disable the layout info on xmobar  
-	   } 
+           } 
       ,handleEventHook =docksEventHook <+> fullscreenEventHook
     }
 
@@ -341,7 +342,7 @@ defaults = defaultConfig {
     -- hooks, layouts
     -- defaultLayouts = smartBorders $ myLayout,
     -- layoutHook = myLayouts,
-    manageHook = myManageHook,
+   -- manageHook = myManageHook,
     startupHook = myStartupHook
 }
  

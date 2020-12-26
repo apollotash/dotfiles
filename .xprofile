@@ -1,4 +1,5 @@
 setxkbmap tr &
 nitrogen --restore &
 picom -f &
-numlockx on
+numlockx on &
+xautolock -time 10 -corners 0-00 -locker slock &

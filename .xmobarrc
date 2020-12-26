@@ -1,5 +1,5 @@
 Config {
-       font = "xft:Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:size=10, DroidSansMono:size=10:antialias=true"
+       font = "xft:Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:size=11, Font Awesome 5 Brands,Font Awesome 5 Brands Regular:style=Regular:size=11, DroidSansMono:size=10:antialias=true"
        , bgColor = "#3F3F3F"
        , alpha = 200
        , fgColor = "#11aaaa"
@@ -16,10 +16,9 @@ Config {
                                  ,"-L","10"
                                  ,"-l","#bbc2cf"
                                  ,"-n","#bbc2cf"
-                                 ,"-h","#fb4934"] 50
-
-                    , Run Date "%a %b %_d %I:%M" "date" 300
-                    , Run DynNetwork ["-t","<fc=#4db5bd><icon=/home/atash/.xmonad/icons/net_down.xbm/></fc> <rx> <fc=#c678dd><icon=/home/atash/.xmonad/icons/net_up.xbm/></fc> <tx>"
+                     		 ,"-h","#fb4934"] 50
+		     , Run Date "%a %b %_d [%H:%M]" "date" 300
+                     , Run DynNetwork ["-t","<fc=#4db5bd><icon=/home/atash/.xmonad/icons/net_down.xbm/></fc> <rx> <fc=#c678dd><icon=/home/atash/.xmonad/icons/net_up.xbm/></fc> <tx>"
                                      ,"-H","400"
                                      ,"-L","10"
                                      ,"-h","#bbc2cf"
@@ -54,6 +53,6 @@ Config {
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %coretemp% | %memory% | %battery% | %dynnetwork% | <fc=#ECBE7B>%date%</fc>  "   -- #69DFFA
+       , template = "%StdinReader% }{ %cpu% <fc=#c0c0c0>|</fc> %coretemp% <fc=#c0c0c0>|</fc> %memory% <fc=#c0c0c0>|</fc> %battery% <fc=#c0c0c0>|</fc> %dynnetwork% <fc=#c0c0c0>|</fc> <fc=#6693cb>%date%</fc> "  
        }
 

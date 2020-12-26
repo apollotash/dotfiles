@@ -1,4 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/atash/.config/ranger'
+let g:netrw_dirhist_9='/home/atash/.config/polybar/scripts'
+let g:netrw_dirhist_8='/home/atash/Downloads/dotfiles/.config/qtile'
+let g:netrw_dirhist_7='/etc/initcpio'
+let g:netrw_dirhist_6='/etc/initcpio/install'
+let g:netrw_dirhist_5='/etc/initcpio'
+let g:netrw_dirhist_4='/etc/initcpio/hooks'
+let g:netrw_dirhist_3='/etc/initcpio'
 let g:netrw_dirhist_2='/home/atash/.xmonad'
 let g:netrw_dirhist_1='/home/atash/.config/i3'
