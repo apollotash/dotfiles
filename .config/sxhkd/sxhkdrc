@@ -137,14 +137,14 @@ XF86MonBrightnessUp
 	xbacklight +5
 
 # Lockscreen
-ctrl + alt + l
+super + ctrl + l
 	slock
 
 # Reeboot system
-ctrl + alt + r
+super + ctrl + r
 	reboot
 
 # Poweroff
-ctrl + alt + p
+super + ctrl + p
 	poweroff
 

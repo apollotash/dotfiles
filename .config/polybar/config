@@ -1,10 +1,9 @@
 [colors]
-background 	= #CC3F3F3F
-background1	= #3F3F3F
-foreground 	= #11aaaa
+;background 	= #803F3F3F	;%50
+background	= #E63F3F3F	
+foreground 	= #add8e6
 blue       	= #3fa9f4
 green      	= #22b574
-black      	= #000000
 darkRed	   	= #d75f5f
 white	   	= #ffffff
 silverGray 	= #888888
@@ -13,9 +12,7 @@ iceColor   	= #d3d3d3
 lightGreen 	= #3cb371
 purple	   	= #581845
 teal	    	= #008080
-lightYellow 	= #ffff45
 gray		= #505050
-rose		= #F8AFA6
 foamGreen 	= #93E9BE
 
 [bar/top]
@@ -64,7 +61,7 @@ font-2 = Font Awesome 5 Brands:size=10;3
 ; Modlues
 modules-left   =  rofi sep alacritty firefox nautilus vscode gimp sep bspwm 
 modules-center = date time
-modules-right  = wireless-network bluetooth battery xbacklight pavolume sep lock logout reboot poweroff
+modules-right  = wireless-network bluetooth eth sep battery xbacklight pavolume sep lock pmenu
 
 ;Make the bar appear below windows
 ;wm-restack = i3
@@ -119,7 +116,7 @@ label-empty-foreground = ${colors.silverGray}
 label-empty-padding = 1
 
 label-occupied = %icon%
-label-occupied-foreground = ${colors.foreground}
+label-occupied-foreground = ${colors.foamGreen}
 label-occupied-padding = 1
 
 
@@ -145,7 +142,7 @@ label-urgent-padding    = 1
 type = internal/xbacklight
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.green}
+format-prefix-foreground = ${colors.foreground}
 ;label-foreground = ${colors.green}
 format-padding = 1
 
@@ -169,7 +166,7 @@ format-discharging-foreground = ${colors.green}
 format-discharging-background = ${colors.background}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.green}
+format-full-prefix-foreground = ${colors.foreground}
 format-full-prefix-padding-left = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -213,7 +210,7 @@ format-disconnected = <label-disconnected>
 label-disconnected = "%{A1:alacritty -e nmtui:}%{A3:nmcli radio wifi on &:}%{A}%{A}"
 label-connected = "%{A1:alacritty -e nmtui:}%{A3:nmcli radio wifi off &:} %essid%%{A}%{A}"
 label-disconnected-foreground = ${colors.silverGray}
-label-connected-foreground = ${colors.green}
+label-connected-foreground = ${colors.foreground}
 label-disconnected-padding    = 1
 
 [module/pavolume]
@@ -225,7 +222,7 @@ exec = ~/.config/polybar/scripts/pavolume.sh --listen
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-foreground = ${colors.green}
+format-foreground = ${colors.foreground}
 label-padding    = 1
 format-background = ${colors.background}
 
@@ -293,9 +290,9 @@ type = internal/date
 interval = 5
 date = " %a %b %d, %Y"
 format-prefix = " "
-format-prefix-foreground = ${colors.rose}
-format-foreground = ${colors.rose}
-format-background = ${colors.background1}
+format-prefix-foreground = ${colors.foreground}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
 [module/time]
 type = internal/date
@@ -308,8 +305,8 @@ time = %H:%M
 
 ; Label
 label            =  %time%
-label-foreground = ${colors.rose}
-label-background = ${colors.background1}
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
 label-padding    = 1
 
 ; Bluetooth module
@@ -325,7 +322,7 @@ format-foreground = #ffffff
 [module/sep]
 type = custom/text
 content = |
-content-foreground = ${colors.rose}
+content-foreground = ${colors.iceColor}
 content-background = ${colors.background}
 content-padding = 1
 
@@ -335,7 +332,7 @@ type = custom/text
 ; Label
 content = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -347,7 +344,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -359,7 +356,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -371,7 +368,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -383,7 +380,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -395,7 +392,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -407,7 +404,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -419,7 +416,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -431,7 +428,7 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.foamGreen}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
@@ -443,12 +440,66 @@ type = custom/text
 ; Label
 content            = 
 content-background = ${colors.background}
-content-foreground = ${colors.blue}
+content-foreground = ${colors.foreground}
 content-padding    = 1
 
 ; Mouse click
 click-left = rofi -show run &
 
+[module/eth]
+type = internal/network
+interface = enp4s0f2
+format-connected = <label-connected>
+;format-connected-prefix = ""
+;format-connected-prefix-foreground = ${colors.gray}
+;format-connected = <label-connected>
+label-connected = ""
+label-connected-foreground = ${colors.foreground}
+label-connected-padding = 1
+format-disconnected =
+label-disconnected =
+
+[module/pmenu]
+type = custom/menu
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.foreground}
+label-open-padding = 1
+label-close = 
+label-close-padding = 1
+label-close-foreground = ${colors.silverGray}
+label-separator = |
+label-separator-foreground = ${colors.iceColor}
+
+
+menu-0-0 = 
+menu-0-0-foreground = ${colors.foamGreen}
+menu-0-0-exec = menu-open-1
+menu-0-0-padding = 1
+menu-0-1 = 
+menu-0-1-foreground = ${colors.foamGreen}
+menu-0-1-exec = menu-open-2
+menu-0-1-padding = 1
+
+menu-1-0 = 
+menu-1-0-foreground = ${colors.darkRed}
+menu-1-0-exec = menu-open-0
+menu-1-0-padding = 1
+
+menu-1-1 = 
+menu-1-1-foreground = ${colors.darkRed}
+menu-1-1-exec = reboot
+menu-1-1-padding = 1
+
+menu-2-0 = 
+menu-2-0-foreground = ${colors.darkRed}
+menu-2-0-exec = poweroff
+menu-2-0-padding = 1
+menu-2-1 = 
+menu-2-1-foreground = ${colors.darkRed}
+menu-2-1-exec = menu-open-0
+menu-2-1-padding = 1
 
 [settings]
 screenchange-reload     = true
