@@ -21,4 +21,4 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-exec fish
+#exec fish

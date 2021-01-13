@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + r
-	rofi -show run
+	rofi -show drun -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -137,14 +137,14 @@ XF86MonBrightnessUp
 	xbacklight +5
 
 # Lockscreen
-super + ctrl + l
+ctrl + alt + l
 	slock
 
 # Reeboot system
-super + ctrl + r
+ctrl + alt + r
 	reboot
 
 # Poweroff
-super + ctrl + p
+ctrl + alt + p
 	poweroff
 
