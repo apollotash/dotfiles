@@ -2,7 +2,7 @@ echo "Hello "
 
 loadkeys trq
 
-ping google.com
+timeout 3 ping google.com
 
 timedatectl set-ntp true
 
