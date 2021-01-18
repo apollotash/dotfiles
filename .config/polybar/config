@@ -153,16 +153,20 @@ battery = BAT0
 adapter = AC0
 full-at = 95
 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
 format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
-lable-charging-foreground = ${colors.green}
 format-charging-foreground = ${colors.green}
 format-charging-background = ${colors.background}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging =  %percentage%%
-label-discharging-foreground = ${colors.green}
-format-discharging-foreground = ${colors.green}
+format-discharging-foreground = ${colors.darkRed}
 format-discharging-background = ${colors.background}
 
 format-full-prefix = " "
@@ -171,12 +175,6 @@ format-full-prefix-padding-left = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.green}
 
 animation-charging-0 = 
 animation-charging-1 = 

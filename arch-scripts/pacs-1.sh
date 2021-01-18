@@ -16,7 +16,7 @@ mkswap /dev/sda2
 
 swapon /dev/sda2
 
-mkfs.ext /dev/sda3
+mkfs.ext4 /dev/sda3
 
 mount /dev/sda3 /mnt
 
