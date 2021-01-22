@@ -26,8 +26,15 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 curl -L -o step-2.sh https://raw.githubusercontent.com/apollotash/dotfiles/main/arch-scripts/step-2.sh
 
-cp step-2.sh /mnt
-
 chmod +x step-2.sh
 
+cp step-2.sh /mnt
+
 arch-chroot /mnt ./step-2.sh
+
+rm /mnt/step-2.sh
+
+umount -l /mnt
+
+reboot
+

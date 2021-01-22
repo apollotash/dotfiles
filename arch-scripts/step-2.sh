@@ -31,7 +31,3 @@ pacman -S networkmanager
 systemctl enable NetworkManager
 
 exit
-
-umount -l /mnt
-
-reboot 
