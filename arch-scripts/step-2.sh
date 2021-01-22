@@ -1,31 +1,3 @@
-echo "Hello "
-
-loadkeys trq
-
-timeout 3 ping google.com
-
-timedatectl set-ntp true
-
-timedatectl status
-
-cfdisk
-
-mkfs.fat -F32 /dev/sda1
-
-mkswap /dev/sda2
-
-swapon /dev/sda2
-
-mkfs.ext4 /dev/sda3
-
-mount /dev/sda3 /mnt
-
-pacstrap /mnt base  linux linux-firmware xf86-video-vmware
-
-genfstab -U /mnt >> /mnt/etc/fstab
-
-arch-chroot /mnt
-
 ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 
 hwclock --systohc
