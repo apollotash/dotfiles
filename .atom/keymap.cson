@@ -1,0 +1,5 @@
+'atom-text-editor':
+  'alt-ı': 'core:move-up'
+  'alt-k': 'core:move-down'
+  'alt-j': 'core:move-left'
+  'alt-l': 'core:move-right'

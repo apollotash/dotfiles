@@ -1,0 +1,7 @@
+configuration {
+	modi: "window,run,ssh,drun";
+
+}
+//@theme "/usr/share/rofi/themes/Pop-Dark.rasi"
+//@theme "/usr/share/rofi/themes/solarized.rasi"
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"

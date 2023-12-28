@@ -1,0 +1,12 @@
+00-keyboard.conf	 >>>>	 /etc/X11/xorg.conf.d
+
+lightdm-gtk-greeter.conf >>>>	 /etc/lightdm
+
+NetworkManager.conf	 >>>> 	 /etc/NetworkManager
+
+30-touchpad.conf	 >>>>	 /etc/X11/xorg.conf.d
+
+
+#Check Dns none before this action
+resolv.conf		 >>>>	 /etc
+
