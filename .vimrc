@@ -1,5 +1,5 @@
-filetype plugin on
-filetype indent on
+"filetype plugin on
+"filetype indent on
 syntax on
 
 
