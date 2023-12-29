@@ -11,7 +11,7 @@ cp -r .bash_aliases .bashrc .bash_profile .gitconfig .gtkrc-2.0 .icons/ .vimrc .
 
 cd ~/.config
 
-cp -r alacritty/ bspwm/ fish/ ktouch2rc  nitrogen/ nvim/ polybar/ rofi/ sxhkd/ $mainloc
+cp -r alacritty/ bspwm/ fish/ ktouch2rc  nitrogen/ nvim/ polybar/ rofi/ sxhkd/ $mainloc/.config
 
 cd $mainloc
 
