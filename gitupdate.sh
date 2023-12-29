@@ -7,11 +7,11 @@ mainloc=~/GitRepos/dotfiles
 
 cd ~
 
-cp -r .bash_aliases .bashrc .bash_profile .git/ .gitconfig .gtkrc-2.0 .icons/ .vimrc .xprofile $mainloc
+cp -r .bash_aliases .bashrc .bash_profile .gitconfig .gtkrc-2.0 .icons/ .vimrc .xprofile $mainloc
 
 cd ~/.config
 
-cp -r alacritty/ bspwm/ Code/ fish/ ktouch2rc  nitrogen/ nvim/ polybar/ rofi/ sxhkd/ $mainloc
+cp -r alacritty/ bspwm/ fish/ ktouch2rc  nitrogen/ nvim/ polybar/ rofi/ sxhkd/ $mainloc
 
 cd $mainloc
 
