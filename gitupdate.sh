@@ -21,5 +21,5 @@ git add .
 git commit -m "Last update"
 
 
-git remote add origin git@github.com:apollotash/dotfiles.git
+#git remote add origin git@github.com:apollotash/dotfiles.git
 git push -u origin master
