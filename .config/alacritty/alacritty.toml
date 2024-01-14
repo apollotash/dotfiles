@@ -1,0 +1,10 @@
+[colors.primary]
+background = "#3F3F3F"
+foreground = "#add8e6"
+
+[font.normal]
+family = "Droid Sans Mono"
+style = "Regular"
+
+[window]
+opacity = 0.95
